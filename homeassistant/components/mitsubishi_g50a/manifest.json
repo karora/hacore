@@ -1,0 +1,13 @@
+{
+  "domain": "mitsubishi_g50a",
+  "name": "Mitsubishi G50a",
+  "codeowners": ["@karora"],
+  "config_flow": true,
+  "dependencies": ["logbook"],
+  "documentation": "https://www.home-assistant.io/integrations/mitsubishi_g50a",
+  "homekit": {},
+  "iot_class": "local_polling",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": []
+}

@@ -1,0 +1,31 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "host": "[%key:common::config_flow::data::host%]",
+          "timeout": "Timeout"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "unknown": "[%key:common::config_flow::error::unknown%]"
+    },
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
+    }
+  },
+  "services": {
+    "g50_set_command": {
+      "description": "Sets Mill room temperatures.",
+      "fields": {
+        "temperature": {
+          "description": "Away temp.",
+          "name": "Away temperature"
+        }
+      },
+      "name": "Set room temperature"
+    }
+  }
+}
