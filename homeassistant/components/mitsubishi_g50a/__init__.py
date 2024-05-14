@@ -8,7 +8,6 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_HOST, Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.device_registry import DeviceRegistry, async_get
-from homeassistant.helpers.typing import ConfigType
 
 from .const import DOMAIN
 from .g50a import MitsubishiG50a, enumerate_zones
@@ -60,17 +59,15 @@ ATTR_ZONE = "zone"
 DEFAULT_ZONE = "1"
 
 
-def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
-    """Set up is called when Home Assistant is loading our component."""
+# def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
+#     """Set up is called when Home Assistant is loading our component."""
 
-    async def handle_g50_set_command(call):
-        """Handle the service call."""
-        zone_id = call.data.get(ATTR_ZONE, DEFAULT_ZONE)
+#     async def handle_g50_set_command(call):
+#         """Handle the service call."""
+#         zone_id = call.data.get(ATTR_ZONE, DEFAULT_ZONE)
 
-        bog.info(f"handle_g50_set_command: {zone_id}")
-        hass.states.set(f"{DOMAIN}.g50_set_command", zone_id)
+#         bog.info(f"handle_g50_set_command: {zone_id}")
+#         hass.states.set(f"{DOMAIN}.g50_set_command", zone_id)
 
-    bog.info(f"async_setup: {config} - adding handler for g50_set_command service.")
-    hass.services.async_register(DOMAIN, "g50_set_command", handle_g50_set_command)
-
-    return True
+#     bog.info(f"async_setup: {config} - adding handler for g50_set_command service.")
+#     hass.services.async_register(DOMAIN, "g50_set_command", handle_g50_set_command)

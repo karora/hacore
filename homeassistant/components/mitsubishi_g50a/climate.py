@@ -194,7 +194,6 @@ class MitsubishiG50aClimate(ClimateEntity):
     async def async_set_temperature(self, **kwargs: Any) -> None:
         """Set new target temperature."""
         target = kwargs.get(ATTR_TEMPERATURE)
-        self.hass.async_create_task(self.log_temperature(target))
         if target is not None:
             await self._g50.set_temperature(self._zone_id, float(target))
             logbook.log_entry(
